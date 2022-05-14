@@ -23,8 +23,7 @@ export const updateInitialData = () => async (dispatch) => {
 }
 
 export default function appReducer(state = [], action) {
-  console.log(action);
-  switch (action) {
+  switch (action.type) {
     case UPDATE_CITIES:
       return [...state, ...action.payload];
     default:
