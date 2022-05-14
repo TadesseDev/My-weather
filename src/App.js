@@ -1,13 +1,15 @@
 import Home from './pages/Home';
 import React from 'react';
 import getInitialCities from './API/geodb-cities'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   getInitialCities();
   return (
-    <div className="App">
-      <Home />
-      app component
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
