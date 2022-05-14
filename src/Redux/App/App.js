@@ -1,5 +1,6 @@
 import fetchCitiesData from '../../API/geodb-cities';
 import cityWeather from '../../API/currentWeatherData'
+import { v4 } from 'uuid';
 const UPDATE_CITIES = 'APP/initialize_app_with_city';
 
 const routeCityData = async (dispatch, latitude, longitude) => {
@@ -12,7 +13,7 @@ const routeCityData = async (dispatch, latitude, longitude) => {
   for (let i = 0; i < cities.length; i++) {
     const cityInfo = await cityWeather(cities[i].latitude, cities[i].longitude)
     const { name, clouds, coord, main, sys, wind } = cityInfo;
-    dispatch({ type: UPDATE_CITIES, payload: [{ name, clouds, coord, main, sys, wind }] });
+    dispatch({ type: UPDATE_CITIES, payload: [{ id: v4(), name, clouds, coord, main, sys, wind }] });
   }
 }
 
