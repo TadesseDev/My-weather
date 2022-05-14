@@ -1,6 +1,6 @@
 import { getNearByCity } from './endPoints'
 
-const fetchCitiesData = (latitude = '9.005401', longitude = '38.763611') => {
+const fetchCitiesData = (latitude = '40.730610', longitude = '-73.935242') => {
   const options = {
     method: 'GET',
     headers: {
