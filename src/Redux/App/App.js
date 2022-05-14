@@ -1,24 +1,26 @@
 import fetchCitiesData from '../../API/geodb-cities';
 import cityWeather from '../../API/currentWeatherData'
 const UPDATE_CITIES = 'APP/initialize_app_with_city';
-export const updateInitialData = () => async (dispatch) => {
-  const routeCityData = async (latitude, longitude) => {
-    let cities = [];
-    if (latitude && longitude) {
-      cities = await fetchCitiesData(latitude, longitude);
-    }
-    else cities = await fetchCitiesData();
-    cities = cities.data;
-    for (let i = 0; i < cities.length; i++) {
-      const cityInfo = await cityWeather(cities[i].latitude, cities[i].longitude)
-      const { name, clouds, coord, main, sys, wind } = cityInfo;
-      dispatch({ type: UPDATE_CITIES, payload: [{ name, clouds, coord, main, sys, wind }] });
-    }
+
+const routeCityData = async (dispatch, latitude, longitude) => {
+  let cities = [];
+  if (latitude && longitude) {
+    cities = await fetchCitiesData(latitude, longitude);
   }
+  else cities = await fetchCitiesData();
+  cities = cities.data;
+  for (let i = 0; i < cities.length; i++) {
+    const cityInfo = await cityWeather(cities[i].latitude, cities[i].longitude)
+    const { name, clouds, coord, main, sys, wind } = cityInfo;
+    dispatch({ type: UPDATE_CITIES, payload: [{ name, clouds, coord, main, sys, wind }] });
+  }
+}
+
+export const updateInitialData = () => async (dispatch) => {
   navigator.geolocation.getCurrentPosition(async ({ coords }) => {
-    routeCityData(coords.latitude, coords.longitude);
+    routeCityData(dispatch, coords.latitude, coords.longitude);
   }, async denied => {
-    routeCityData();
+    routeCityData(dispatch);
   });
 }
 
