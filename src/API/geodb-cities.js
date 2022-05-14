@@ -1,6 +1,6 @@
 import { getNearByCity } from './endPoints'
 
-const fetchCitiesData = (latitude = '40.730610', longitude = '-73.935242') => {
+const fetchCitiesData = async (latitude = '40.730610', longitude = '-73.935242') => {
   const options = {
     method: 'GET',
     headers: {
@@ -8,22 +8,12 @@ const fetchCitiesData = (latitude = '40.730610', longitude = '-73.935242') => {
       'X-RapidAPI-Key': '566c430e66mshb3ce2e6895aae75p17f4e4jsnc091a7b69f86'
     }
   }
-  fetch(getNearByCity(latitude, longitude), options)
+  return fetch(getNearByCity(latitude, longitude), options)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => response)
     .catch(err => {
       console.error(err);
     });
 }
 
-export default function getInitialCities() {
-  navigator.geolocation.getCurrentPosition(({ coords }) => {
-    fetchCitiesData(coords.latitude, coords.longitude);
-    // const latitude = coords.latitude;
-    // const longitude = coords.longitude;
-    // console.log(latitude, longitude);
-
-  }, denied => {
-    fetchCitiesData();
-  });
-}
+export default fetchCitiesData;
