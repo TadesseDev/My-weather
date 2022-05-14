@@ -3,14 +3,12 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateInitialData } from './Redux/App/App'
 function App() {
-  const storeState = useSelector(store => store);
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("action creator ", updateInitialData()());
-    console.log("state is", storeState);
+    dispatch(updateInitialData());
   }, []);
   return (
     <BrowserRouter>
