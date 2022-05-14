@@ -9,10 +9,24 @@ function App() {
     }
   };
 
-  fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?location=%2B11.3494247%2B37.9784585&limit=10', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+  navigator.geolocation.getCurrentPosition(({ coords }) => {
+    const latitude = coords.latitude;
+    const longitude = coords.longitude;
+    console.log(latitude, longitude);
+    fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?location=%2B11.3494247%2B37.9784585&limit=10', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => {
+        console.error(err);
+      });
+  }, denied => {
+    fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?location=%2B11.3494247%2B37.9784585&limit=10', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => {
+        console.error(err);
+      });
+  });
   return (
     <div className="App">
       <Home />
