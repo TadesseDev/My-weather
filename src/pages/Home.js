@@ -1,13 +1,16 @@
 import React from 'react'
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux'
 import Weather from '../components/Weather';
 export default function Home() {
 
   const cities = useSelector(store => store.cities);
+  console.log(cities);
   return (
     <Container>
-      {cities.map(city => <Weather key={city.id} city={city} />)}
+      <Row>
+        {cities.map(city => <Weather key={city.id} city={city} />)}
+      </Row>
     </Container>
   )
 }
