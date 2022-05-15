@@ -12,7 +12,7 @@ export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
   console.log(city);
   const action = {
     type: ADD_SINGLE_CITY,
-    payload: { id: v4(), name, distance, population, nearMe: false, country, countryCode, clouds, coord, weather, unit, main, wind }
+    payload: { id: v4(), name, distance, population, nearMe: 0, country, countryCode, clouds, coord, weather, unit, main, wind }
   }
   dispatch(action);
   console.log(action);

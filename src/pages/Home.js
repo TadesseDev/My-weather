@@ -4,10 +4,16 @@ import { useSelector } from 'react-redux'
 import Weather from '../components/Weather';
 export default function Home() {
   const cities = useSelector(store => store.cities);
-  const cityNearMe = cities.filter(city => city.nearMe);
-  const otherCities = cities.filter(city => !city.nearMe);
+  const myCity = cities.filter(city => city.nearMe === 0);
+  const cityNearMe = cities.filter(city => city.nearMe === 1);
+  const otherCities = cities.filter(city => city.nearMe === 2);
   return (
     <Container>
+      <h3>My cities</h3>
+      <Row >
+        {myCity.length > 0 && myCity.map(city => <Weather key={city.id} city={city} />) || <p>You havent checked any city yet</p>}
+      </Row>
+      <hr />
       <h3>Cities near you</h3>
       <Row >
         {cityNearMe.length > 0 && cityNearMe.map(city => <Weather key={city.id} city={city} />) || <p>We couldn't find your location</p>}
