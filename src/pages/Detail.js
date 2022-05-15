@@ -14,6 +14,6 @@ export default function Detail() {
   return (
     city && <Container>
 
-    </Container>
+    </Container> || <div>No city found</div>
   )
 }

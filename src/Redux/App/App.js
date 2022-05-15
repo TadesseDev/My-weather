@@ -12,9 +12,9 @@ const routeCityData = async (dispatch, latitude, longitude) => {
   cities = cities.data;
   cities.forEach(async city => {
     const cityInfo = await cityWeather(city.latitude, city.longitude)
-    const name = city.name;
+    const { name, distance = false, population } = city;
     const { clouds, coord, main, sys, wind } = cityInfo;
-    dispatch({ type: UPDATE_CITIES, payload: [{ id: v4(), name, clouds, coord, main, sys, wind }] });
+    dispatch({ type: UPDATE_CITIES, payload: [{ id: v4(), name, distance, population, clouds, coord, main, sys, wind }] });
   });
 }
 
