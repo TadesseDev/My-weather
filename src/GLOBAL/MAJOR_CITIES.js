@@ -100,3 +100,51 @@ export default [
     "distance": 0,
   }
 ]
+
+// [
+//   {
+//     "name": "Bahir Dar",
+//     "local_names": {
+//       "zh": "巴赫達爾",
+//       "hu": "Bahir Dar",
+//       "it": "Bahar Dar",
+//       "sr": "Бахир Дар",
+//       "el": "Μπαχρ-Νταρ",
+//       "af": "Bahir Dar",
+//       "da": "Bahir Dar",
+//       "fr": "Baher Dar",
+//       "sn": "Bahir Dar",
+//       "uk": "Бахр-Дар",
+//       "ru": "Бахр-Дар",
+//       "ja": "バハルダール",
+//       "eu": "Bahir Dar",
+//       "zu": "Bahir Dar",
+//       "nl": "Bahir Dar",
+//       "fi": "Bahir Dar",
+//       "hr": "Bahir Dar",
+//       "he": "בהר דר",
+//       "vi": "Bahir Dar",
+//       "en": "Bahir Dar",
+//       "be": "Бахр-Дар",
+//       "sv": "Bahir Dar",
+//       "lt": "Bahir Daras",
+//       "am": "ባሕር-ዳር",
+//       "ha": "Baher Dar",
+//       "ar": "بحر دار",
+//       "tr": "Bahir Dar",
+//       "ka": "ბაჰრ-დარი",
+//       "pt": "Bahir Dar",
+//       "es": "Bahir Dar",
+//       "eo": "Bahir Dar",
+//       "nb": "Bahir Dar",
+//       "pl": "Bahyr Dar",
+//       "de": "Bahir Dar",
+//       "ro": "Bahir Dar",
+//       "ca": "Bahir Dar",
+//       "ko": "바히르다르"
+//     },
+//     "lat": 11.5947981,
+//     "lon": 37.3879783,
+//     "country": "ET"
+//   }
+// ]
