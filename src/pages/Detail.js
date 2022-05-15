@@ -28,6 +28,7 @@ export default function Detail() {
       <Row ><Col>Sea level</Col> <Col >{city.main.sea_level || "Not available"}</Col></Row>
       <Row ><Col>Population</Col> <Col >{city.population || 'Not available'}</Col></Row>
       <Row><Col>Approximate distance</Col> <Col >{city.distance && city.distance + "KM" || 'Not available'}</Col></Row>
+      <Row><Col>Coordinate</Col> <Col><div>Lat: {city.coord.lat}</div><div>Lat: {city.coord.lat}</div></Col></Row>
     </Container> || <div>No city found</div>
   )
 }
