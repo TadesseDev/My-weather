@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useDispatch } from 'react-redux';
-import { updateInitialData } from './Redux/App/App'
+import { updateInitialData } from './Redux/app/app'
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {

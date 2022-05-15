@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
-import appReducer from './App/App'
+import appReducer from './app/app'
 const rootReducer = combineReducers({
   cities: appReducer,
 })
