@@ -19,7 +19,7 @@ export default [
     "wikiDataId": "Q645293",
     "type": "ADM2",
     "city": "Mexico City",
-    "name": "Cuauhtémoc",
+    "name": "Mexico City",
     "country": "Mexico",
     "countryCode": "MX",
     "region": "Mexico City",
