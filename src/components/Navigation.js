@@ -18,13 +18,18 @@ export default function Navigation() {
   return (
     <div id="navigation">
       <Container>
-        <input type="text"
-          placeholder="Search your city"
-          onChange={updateSearchValue}
-          value={cityToSearch} />
-        <CgSearchLoading
-          style={{ "transform": "translateX(-110%)" }}
-          onClick={searchCity} />
+        <div id="filter">
+
+        </div>
+        <div id="search">
+          <input type="text"
+            placeholder="Search your city"
+            onChange={updateSearchValue}
+            value={cityToSearch} />
+          <CgSearchLoading
+            style={{ "transform": "translateX(-110%)" }}
+            onClick={searchCity} />
+        </div>
       </Container>
     </div>
   )
