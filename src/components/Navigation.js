@@ -16,11 +16,8 @@ export default function Navigation() {
     dispatch(searchAndAddCity(cityToSearch, navigate));
   }
   return (
-    <Navbar bg="light" expand="sm">
+    <div id="navigation">
       <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-        </Navbar.Collapse>
         <input type="text"
           placeholder="Search your city"
           onChange={updateSearchValue}
@@ -29,6 +26,6 @@ export default function Navigation() {
           style={{ "transform": "translateX(-110%)" }}
           onClick={searchCity} />
       </Container>
-    </Navbar>
+    </div>
   )
 }
