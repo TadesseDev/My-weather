@@ -7,11 +7,11 @@ const UPDATE_CITIES = 'APP/initialize_app_with_city';
 const updateStoreWithCityData = (cities, nearMe, dispatch) => {
   cities.forEach(async city => {
     const cityInfo = await cityWeather(city.latitude, city.longitude)
-    const { name, distance = false, population } = city;
-    const { clouds, coord, main, sys, wind, weather, unit } = cityInfo;
+    const { name, distance = false, population, country, countryCode } = city;
+    const { clouds, coord, main, wind, weather, unit } = cityInfo;
     dispatch({
       type: UPDATE_CITIES,
-      payload: [{ id: v4(), name, distance, population, nearMe, clouds, coord, weather, unit, main, sys, wind }]
+      payload: [{ id: v4(), name, distance, population, nearMe, country, countryCode, clouds, coord, weather, unit, main, wind }]
     });
   });
 }
