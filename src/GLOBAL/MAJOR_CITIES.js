@@ -11,8 +11,8 @@ export default [
     "regionCode": "AA",
     "latitude": 9.027222222,
     "longitude": 38.736944444,
-    "population": 3041002,
-    "distance": 1.21,
+    "population": 5006000,
+    "distance": 0,
   },
   {
     "id": 3245015,
@@ -26,7 +26,7 @@ export default [
     "regionCode": "CMX",
     "latitude": 19.443055555,
     "longitude": -99.144722222,
-    "population": 0,
+    "population": 9209944,
     "distance": 1.04,
   },
   {
@@ -39,8 +39,8 @@ export default [
     "regionCode": "NY",
     "latitude": 42.63,
     "longitude": -75.04,
-    "population": 60636,
-    "distance": 25.64,
+    "population": 8550405,
+    "distance": 0,
   },
   {
     "id": 150028,
@@ -54,8 +54,8 @@ export default [
     "regionCode": "13",
     "latitude": 35.658055555,
     "longitude": 139.751388888,
-    "population": 258105,
-    "distance": 0.34,
+    "population": 37274000,
+    "distance": 0,
   },
   {
     "id": 45633,
@@ -69,8 +69,8 @@ export default [
     "regionCode": "ENG",
     "latitude": 51.507222222,
     "longitude": -0.1275,
-    "population": 8908081,
-    "distance": 0.38,
+    "population": 9002488,
+    "distance": 0,
   },
   {
     "id": 3087843,
@@ -84,8 +84,8 @@ export default [
     "regionCode": "BJ",
     "latitude": 39.91,
     "longitude": 116.36,
-    "population": 1302000,
-    "distance": 0.33,
+    "population": 21333000,
+    "distance": 0,
   },
   {
     "id": 3261564,
@@ -99,8 +99,8 @@ export default [
     "regionCode": "IDF",
     "latitude": 48.862777777,
     "longitude": 2.344444444,
-    "population": 0,
-    "distance": 0.25,
+    "population": 2165423,
+    "distance": 0,
   },
   {
     "id": 3446634,
@@ -114,8 +114,8 @@ export default [
     "regionCode": "NH",
     "latitude": 52.37348,
     "longitude": 4.89806,
-    "population": 0,
-    "distance": 0.31,
+    "population": 1166000,
+    "distance": 0,
   },
   {
     "id": 144279,
@@ -129,8 +129,8 @@ export default [
     "regionCode": "MD",
     "latitude": 40.40225,
     "longitude": -3.71029,
-    "population": 6661949,
-    "distance": 1.06,
+    "population": 6714000,
+    "distance": 0,
   },
   {
     "id": 3447814,
@@ -144,7 +144,7 @@ export default [
     "regionCode": "DU",
     "latitude": 25.266666666,
     "longitude": 55.316666666,
-    "population": 0,
+    "population": 2964000,
     "distance": 0,
   }
 ]
