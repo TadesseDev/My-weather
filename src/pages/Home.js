@@ -8,7 +8,7 @@ export default function Home() {
   console.log(cities);
   return (
     <Container>
-      <Row>
+      <Row >
         {cities.map(city => <Weather key={city.id} city={city} />)}
       </Row>
     </Container>

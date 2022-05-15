@@ -5,7 +5,7 @@ export default function Weather({ city }) {
   const navigate = useNavigate();
   return (
     <Col xs={6} sm={4} lg={2} className="p-0" onClick={() => navigate(`/detail?id=${city.id}`)}>
-      <Card w={100} >
+      <Card className="w=100 h=100">
         <Card.Body>
           <Card.Title>
             {city.name}
