@@ -10,7 +10,7 @@ export default function Weather({ city }) {
           <Card.Title>
             {city.name}
           </Card.Title>
-          <Card.Text>city detail</Card.Text>
+          <Card.Text>{city.weather[0].description}</Card.Text>
         </Card.Body>
         <small>{city.main.temp}{city.unit}</small>
         <small>{city.country}</small>
