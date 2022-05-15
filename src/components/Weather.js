@@ -12,6 +12,8 @@ export default function Weather({ city }) {
           </Card.Title>
           <Card.Text>city detail</Card.Text>
         </Card.Body>
+        <small>{city.sys.country}</small>
+        <small>{city.main.temp}{city.unit}</small>
       </Card>
     </Col >
   )
