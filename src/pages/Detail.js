@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import { Container } from 'react-bootstrap'
 export default function Detail() {
   const [getParam, setParam] = useSearchParams();
   let city = { id: getParam.get('id') }
@@ -11,6 +12,8 @@ export default function Detail() {
     }
   });
   return (
-    <div>Detail</div>
+    city && <Container>
+
+    </Container>
   )
 }
