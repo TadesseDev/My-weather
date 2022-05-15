@@ -22,9 +22,9 @@ const routeCityData = async (dispatch, latitude, longitude) => {
   if (latitude && longitude) {
     cities = await fetchCitiesData(latitude, longitude);
     cities = cities.data;
-    updateStoreWithCityData(cities, true, dispatch);
+    updateStoreWithCityData(cities, 1, dispatch);
   }
-  updateStoreWithCityData(MAJOR_CITIES, false, dispatch);
+  updateStoreWithCityData(MAJOR_CITIES, 2, dispatch);
 }
 
 export const updateInitialData = () => async (dispatch) => {
