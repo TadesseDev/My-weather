@@ -1,6 +1,7 @@
 import fetchCitiesData from '../../API/geodb-cities';
 import cityWeather from '../../API/currentWeatherData'
 import { v4 } from 'uuid';
+import searchReducer from '../components/navigation/navigation'
 import MAJOR_CITIES from '../../GLOBAL/MAJOR_CITIES'
 const UPDATE_CITIES = 'APP/initialize_app_with_city';
 
@@ -39,6 +40,6 @@ export default function appReducer(state = [], action) {
     case UPDATE_CITIES:
       return [...state, ...action.payload];
     default:
-      return state;
+      return searchReducer(state, action);
   }
 }

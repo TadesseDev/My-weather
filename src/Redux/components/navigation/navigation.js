@@ -23,6 +23,7 @@ const searchReducer = (state = [], action) => {
   console.log("dispatching action from search");
   switch (action.type) {
     case ADD_SINGLE_CITY:
+      console.log("action found")
       return [action.payload, ...state];
     default:
       return state;
