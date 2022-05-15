@@ -25,7 +25,7 @@ export default function Detail() {
         deg: {city.wind.deg}° |
         gust: {city.wind.gust} </Col></Row>
       <Row ><Col>Humidity</Col> <Col >{city.main.humidity}%</Col></Row>
-      <Row ><Col>Sea level</Col> <Col >{city.main.sea_level}%</Col></Row>
+      <Row ><Col>Sea level</Col> <Col >{city.main.sea_level || "Not available"}</Col></Row>
       <Row ><Col>Population</Col> <Col >{city.population || 'Not available'}</Col></Row>
       <Row><Col>Approximate distance</Col> <Col >{city.distance && city.distance + "KM" || 'Not available'}</Col></Row>
     </Container> || <div>No city found</div>
