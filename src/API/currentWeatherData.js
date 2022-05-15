@@ -1,8 +1,15 @@
-import { cityWeatherEndPoint } from './endPoints';
+import { cityWeatherEndPoint } from '../GLOBAL/endPoints';
 
-const cityWeather = async (cityLatitude, cityLongitude) => {
-  let response = await fetch(cityWeatherEndPoint(cityLatitude, cityLongitude));
+// we chan use mesure to change temp
+const cityWeather = async (cityLatitude, cityLongitude, unit = "metric") => {
+  const URL = cityWeatherEndPoint(cityLatitude, cityLongitude, unit);
+  console.log(URL);
+  let response = await fetch(URL);
   response = await response.json();
-  return response;
+  console.log(response);
+  unit = unit === "metric" ? "℃" : unit === "imperial" ? 'F' : "K";
+  return {
+    ...response, unit
+  };
 }
 export default cityWeather;

@@ -1,4 +1,4 @@
-import { getNearByCity } from './endPoints'
+import { getNearByCity } from '../GLOBAL/endPoints'
 
 const fetchCitiesData = async (latitude = '40.730610', longitude = '-73.935242') => {
   const options = {
