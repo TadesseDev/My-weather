@@ -10,7 +10,6 @@ export default function Home() {
   const myCity = cities.filter(city => city.nearMe === 0);
   const cityNearMe = cities.filter(city => city.nearMe === 1);
   const otherCities = cities.filter(city => city.nearMe === 2);
-  cities.forEach(city => console.log(city.weather[0].description))
   return (
     (filterType === 'All') && < Container >
       <h3 className="title">My cities</h3>
