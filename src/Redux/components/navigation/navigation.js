@@ -21,8 +21,10 @@ export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
   navigator(`/detail?id=${action.payload.id}`);
 }
 
-export const applyFilter = (filterType) =>
-  ({ type: APPLY_FILTER, payload: filterType });
+export const applyFilter = (filterType, navigate) => {
+  navigate('/');
+  return { type: APPLY_FILTER, payload: filterType };
+}
 export const removeFilter = () =>
   ({ type: REMOVE_FILTER });
 

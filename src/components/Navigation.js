@@ -16,7 +16,7 @@ export default function Navigation() {
     dispatch(searchAndAddCity(cityToSearch, navigate));
   }
   const filter = (event) => {
-    dispatch(applyFilter(event.target.value));
+    dispatch(applyFilter(event.target.value, navigate));
   }
   return (
     <div id="navigation">
