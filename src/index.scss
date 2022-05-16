@@ -1,0 +1,22 @@
+:root {
+  --main: #0298cd;
+  --light: #fafd64;
+}
+* {
+  background-color: transparent;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  background-color: var(--main);
+  color: var(--light);
+}
+.card {
+  background-color: transparent;
+  padding: 2%;
+}

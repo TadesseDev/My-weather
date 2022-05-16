@@ -4,7 +4,6 @@ import Error from './pages/Error';
 import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useDispatch } from 'react-redux';
 import { updateInitialData } from './Redux/app/app'
 function App() {
