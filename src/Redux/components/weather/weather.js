@@ -1,4 +1,4 @@
-import { BsFillCloudDrizzleFill, BsFillCloudFog2Fill, BsFillSunFill } from 'react-icons/bs';
+import { BsFillCloudDrizzleFill, BsFillCloudFog2Fill, BsFillSunFill, BsCloudHaze } from 'react-icons/bs';
 import { GiRaining } from 'react-icons/gi'
 import { IoIosPartlySunny } from 'react-icons/io'
 const ADD_NEW_WEATHER_ICON = "Redux/components/weather/weather/ADD_NEW_WEATHER_ICON";
@@ -11,6 +11,7 @@ initialWeatherIcons.set("light rain", <GiRaining className="weather-icon" />);
 initialWeatherIcons.set("overcast clouds", <BsFillCloudDrizzleFill className="weather-icon" />);
 initialWeatherIcons.set("few clouds", <IoIosPartlySunny className="weather-icon" />);
 initialWeatherIcons.set("broken clouds", <BsFillCloudFog2Fill className="weather-icon" />);
+initialWeatherIcons.set("scattered clouds", <BsCloudHaze className="weather-icon" />);
 initialWeatherIcons.set("clear sky", <BsFillSunFill className="weather-icon" />);
 
 const weatherIconsReducer = (state = initialWeatherIcons, action) => {
