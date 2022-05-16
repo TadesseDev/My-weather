@@ -1,5 +1,6 @@
 :root {
   --main: #0298cd;
+  --secondary: #fefbd2;
   --light: #fafd64;
 }
 * {
@@ -14,7 +15,7 @@ body {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   background-color: var(--main);
-  color: var(--light);
+  color: var(--secondary);
 }
 .card {
   background-color: transparent;

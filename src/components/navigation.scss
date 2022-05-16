@@ -1,0 +1,33 @@
+input,
+select {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  color: var(--light);
+  max-width: 100%;
+}
+#navigation {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    #search {
+      max-width: 50%;
+      position: relative;
+      .searchIcon {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 15%;
+      }
+    }
+    #filter {
+      width: 50%;
+      max-width: 50%;
+    }
+  }
+}
+p {
+  margin: 0;
+  padding: 0;
+}

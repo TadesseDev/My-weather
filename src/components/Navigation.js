@@ -4,6 +4,7 @@ import { Navbar, Container, Form } from 'react-bootstrap';
 import { CgSearchLoading } from 'react-icons/cg';
 import { searchAndAddCity, applyFilter, removeFilter } from '../Redux/components/navigation/navigation'
 import { useNavigate } from 'react-router-dom';
+import './navigation.scss'
 export default function Navigation() {
   const [cityToSearch, updateCityToSearch] = useState("");
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export default function Navigation() {
     <div id="navigation">
       <Container>
         <div id="filter">
-          <p>filter with category</p>
+          <p>Category</p>
           <select name="category" id="category" onChange={filter}>
             <option value="All">All</option>
             <option value="My cities">My cities</option>
@@ -35,7 +36,7 @@ export default function Navigation() {
             onChange={updateSearchValue}
             value={cityToSearch} />
           <CgSearchLoading
-            style={{ "transform": "translateX(-110%)" }}
+            className="searchIcon"
             onClick={searchCity} />
         </div>
       </Container>
