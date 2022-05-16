@@ -21,7 +21,7 @@ export const searchAndAddCity = (cityName, navigator, result) => async (dispatch
     dispatch(action);
     navigator(`/detail?id=${action.payload.id}`);
   } catch (error) {
-    navigator(`/error?message=city-not-found`);
+    navigator(`/error?message=We could not find your city`);
     console.error('fail to fetch city', error);
   }
 }
