@@ -22,8 +22,10 @@ export default function Navigation() {
     <div id="navigation">
       <Container>
         <div id="filter">
-          <p>Category</p>
-          <select name="category" id="category" onChange={filter}>
+          <select
+            name="category"
+            id="category"
+            onChange={filter}>
             <option value="All">All</option>
             <option value="My cities">My cities</option>
             <option value="Near by cities">Near by cities</option>

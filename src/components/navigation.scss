@@ -5,8 +5,11 @@ select {
   border-bottom: 2px solid black;
   color: var(--light);
   max-width: 100%;
+  padding: 10px;
 }
 #navigation {
+  margin-bottom: 20px;
+  padding: 4vw;
   .container {
     display: flex;
     align-items: center;
@@ -19,11 +22,16 @@ select {
         right: 0;
         height: 100%;
         width: 15%;
+        max-width: 20px;
       }
     }
     #filter {
       width: 50%;
       max-width: 50%;
+      option {
+        background-color: var(--main);
+        padding: 10px;
+      }
     }
   }
 }
