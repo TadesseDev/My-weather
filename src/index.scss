@@ -1,7 +1,7 @@
 :root {
   --main: #0298cd;
+  --mainDark: #004158;
   --secondary: #fefbd2;
-  --light: #fafd64;
 }
 * {
   background-color: transparent;
@@ -16,13 +16,4 @@ body {
   font-weight: 300;
   background-color: var(--main);
   color: var(--secondary);
-}
-.card {
-  background-color: transparent;
-  padding: 2%;
-  border: none;
-  border: 1px solid rgba(255, 255, 255, 0.233);
-}
-.card:hover {
-  border: 1px solid white;
 }
