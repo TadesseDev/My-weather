@@ -2,6 +2,8 @@ import getCityDetail from '../../../API/name-to-coordinate'
 import cityWeather from '../../../API/currentWeatherData'
 import { v4 } from 'uuid';
 const ADD_SINGLE_CITY = "Redux/components/navigation/navigation/ADD_SINGLE_CITY";
+const APPLY_FILTER = "Redux/components/navigation/navigation/TRUE";
+const REMOVE_FILTER = "Redux/components/navigation/navigation/false";
 
 export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
   let city = await getCityDetail(cityName);
@@ -19,15 +21,27 @@ export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
   navigator(`/detail?id=${action.payload.id}`);
 }
 
-const searchReducer = (state = [], action) => {
-  console.log("dispatching action from search");
+export const applyFilter = (filterType) =>
+  ({ type: APPLY_FILTER, payload: filterType });
+export const removeFilter = () =>
+  ({ type: REMOVE_FILTER });
+
+export const searchReducer = (state = [], action) => {
   switch (action.type) {
-    case ADD_SINGLE_CITY:
-      console.log("action found")
+    case APPLY_FILTER:
       return [action.payload, ...state];
     default:
       return state;
   }
 }
 
-export default searchReducer;
+export const filterReducer = (state = "All", action) => {
+  switch (action.type) {
+    case APPLY_FILTER:
+      return action.payload;
+    case REMOVE_FILTER:
+      return "All";
+    default:
+      return state;
+  }
+}
