@@ -12,8 +12,15 @@
 }
 
 hr {
-  color: black;
-  border: 3px solid black;
+  border-top: 10px solid rgb(0, 0, 0);
+  width: 30%;
+  margin: 10px auto;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.warning {
+  text-align: center;
 }
 
 .weather-icon {
@@ -25,4 +32,14 @@ hr {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.card-text {
+  text-align: center;
+}
+
+.title {
+  margin: 20px 0;
+  border-bottom: 3px solid var(--mainDark);
+  padding: 10px;
 }
