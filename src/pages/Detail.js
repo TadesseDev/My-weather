@@ -23,6 +23,7 @@ export default function Detail() {
           <h4>{city.weather[0].description}</h4>
           <small>max-tmp: {city.main.temp_max}</small>
           <small>min-temp{city.main.temp_min}</small>
+          {icon}
         </Row>
         <Row ><Col xs={6} md={4}>Cloud</Col> <Col xs={6} sm={4}>{city.clouds.all}%</Col></Row>
         <Row><Col xs={6} md={4}>Wind</Col> <Col xs={6} md={4}>

@@ -4,9 +4,17 @@
       justify-content: center;
       border: 2px solid var(--mainDark);
       padding: 3vw;
+      margin: 1vw 2vw;
     }
   }
   .row:first-child {
     position: relative;
+    .weather-icon {
+      color: white;
+      z-index: 0;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+    }
   }
 }
