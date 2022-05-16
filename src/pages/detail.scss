@@ -18,4 +18,14 @@
       transform: translate(0, -50%);
     }
   }
+  button {
+    display: block;
+    margin: 0 auto;
+    padding: 1vw 5vw;
+    background-color: var(--mainDark);
+    color: white;
+  }
+  button:hover {
+    border: 2px solid white;
+  }
 }
