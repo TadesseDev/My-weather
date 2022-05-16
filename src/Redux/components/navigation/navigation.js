@@ -28,7 +28,7 @@ export const removeFilter = () =>
 
 export const searchReducer = (state = [], action) => {
   switch (action.type) {
-    case APPLY_FILTER:
+    case ADD_SINGLE_CITY:
       return [action.payload, ...state];
     default:
       return state;
