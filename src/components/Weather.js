@@ -13,7 +13,7 @@ export default function Weather({ city }) {
   weatherIcons.set("broken clouds", <BsFillCloudFog2Fill className="weather-icon" />);
   weatherIcons.set("clear sky", <BsFillSunFill className="weather-icon" />);
   return (
-    <Col xs={6} sm={4} lg={2} className="p-0" onClick={() => navigate(`/detail?id=${city.id}`)}>
+    <Col xs={6} sm={6} lg={3} className="p-0" onClick={() => navigate(`/detail?id=${city.id}`)}>
       <Card className="w-100 h-100">
         <Card.Body>
           <Card.Title>
