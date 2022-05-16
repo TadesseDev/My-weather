@@ -1,0 +1,28 @@
+.card {
+  position: relative;
+  background-color: transparent;
+  padding: 5%;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.233);
+  cursor: grab;
+}
+.card:hover {
+  border: 1px solid white;
+  box-shadow: 0 0 10px rgba(24, 17, 17, 0.473);
+}
+
+hr {
+  color: black;
+  border: 3px solid black;
+}
+
+.weather-icon {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  color: rgba(255, 255, 255, 0.37);
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
