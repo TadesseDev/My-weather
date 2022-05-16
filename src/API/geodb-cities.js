@@ -8,12 +8,16 @@ const fetchCitiesData = async (latitude = '40.730610', longitude = '-73.935242')
       'X-RapidAPI-Key': '566c430e66mshb3ce2e6895aae75p17f4e4jsnc091a7b69f86'
     }
   }
-  return fetch(getNearByCity(latitude, longitude), options)
-    .then(response => response.json())
-    .then(response => response)
-    .catch(err => {
-      console.error(err);
-    });
+  try {
+    return fetch(getNearByCity(latitude, longitude), options)
+      .then(response => response.json())
+      .then(response => response)
+      .catch(err => {
+        console.error(err);
+      });
+  } catch (error) {
+    throw Error("fail to fetch cities near you: make sure you are connected to the internet", error);
+  }
 }
 
 export default fetchCitiesData;

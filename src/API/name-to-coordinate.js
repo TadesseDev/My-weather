@@ -6,7 +6,7 @@ const getCityDetail = async (cityName) => {
     response = await response.json();
     return response;
   } catch (error) {
-    throw Error("Fail to fetch city detail", error);
+    throw Error("Fail to map your city name to its coordinate. make sure you are connected to the internet", error);
   }
 }
 export default getCityDetail;

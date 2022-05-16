@@ -11,7 +11,7 @@ const cityWeather = async (cityLatitude, cityLongitude, unit = "metric") => {
       ...response, unit
     };
   } catch (error) {
-    throw Error("Fail to get the cities weather data", error);
+    throw Error("Fail to retrive cities weather data.  make sure you are connected to the internet", error);
   }
 }
 export default cityWeather;

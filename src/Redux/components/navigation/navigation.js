@@ -22,6 +22,7 @@ export const searchAndAddCity = (cityName, navigator, result) => async (dispatch
     navigator(`/detail?id=${action.payload.id}`);
   } catch (error) {
     navigator(`/error?message=city-not-found`);
+    console.log('fail to fetch city weather');
   }
 }
 
