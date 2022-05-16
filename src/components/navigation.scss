@@ -6,7 +6,7 @@ select {
   color: var(--main);
   max-width: 100%;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 #navigation {
   margin-bottom: 20px;
@@ -17,7 +17,7 @@ select {
     align-items: center;
     justify-content: space-between;
     #search {
-      max-width: 50%;
+      max-width: 45%;
       position: relative;
       .searchIcon {
         position: absolute;
@@ -25,10 +25,11 @@ select {
         height: 100%;
         width: 15%;
         max-width: 20px;
+        color: var(--main);
       }
     }
     #filter {
-      width: 50%;
+      width: 45%;
       max-width: 50%;
       option {
         background-color: var(--mainDark);
@@ -39,21 +40,4 @@ select {
 p {
   margin: 0;
   padding: 0;
-}
-
-.card {
-  background-color: transparent;
-  padding: 2%;
-  border: none;
-  border: 1px solid rgba(255, 255, 255, 0.233);
-  cursor: grab;
-}
-.card:hover {
-  border: 1px solid white;
-  box-shadow: 0 0 10px rgba(24, 17, 17, 0.473);
-}
-
-hr {
-  color: black;
-  border: 3px solid black;
 }
