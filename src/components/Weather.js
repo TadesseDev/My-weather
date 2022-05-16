@@ -1,17 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'
-import { BsFillCloudDrizzleFill, BsFillCloudFog2Fill, BsFillSunFill } from 'react-icons/bs';
-import { GiRaining } from 'react-icons/gi'
-import { IoIosPartlySunny } from 'react-icons/io'
 export default function Weather({ city }) {
   const navigate = useNavigate();
-  const weatherIcons = new Map();
-  weatherIcons.set("light rain", <GiRaining className="weather-icon" />);
-  weatherIcons.set("overcast clouds", <BsFillCloudDrizzleFill className="weather-icon" />);
-  weatherIcons.set("few clouds", <IoIosPartlySunny className="weather-icon" />);
-  weatherIcons.set("broken clouds", <BsFillCloudFog2Fill className="weather-icon" />);
-  weatherIcons.set("clear sky", <BsFillSunFill className="weather-icon" />);
+  const weatherIcons = useSelector(store => store.weatherIcons);
   return (
     <Col xs={6} sm={6} lg={3} className="p-0" onClick={() => navigate(`/detail?id=${city.id}`)}>
       <Card className="w-100 h-100">
