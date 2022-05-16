@@ -3,9 +3,11 @@ import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import appReducer from './app/app';
 import { filterReducer } from './components/navigation/navigation'
+import weatherIconsReducer from './components/weather/weather'
 const rootReducer = combineReducers({
   cities: appReducer,
   filter: filterReducer,
+  weatherIcons: weatherIconsReducer,
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
