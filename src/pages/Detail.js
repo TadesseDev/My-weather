@@ -2,6 +2,7 @@ import React from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap'
+import './detail.scss'
 export default function Detail() {
   const [getParam, setParam] = useSearchParams();
   const navigate = useNavigate();
@@ -12,8 +13,10 @@ export default function Detail() {
         return thisCity;
     }
   });
+  const icon = useSelector(store =>
+    store.weatherIcons.get(city.weather[0].description));
   return (
-    <div>
+    <div id="detail">
       {city && <Container>
         <Row>
           <h1>{city.name}</h1>
@@ -21,17 +24,18 @@ export default function Detail() {
           <small>max-tmp: {city.main.temp_max}</small>
           <small>min-temp{city.main.temp_min}</small>
         </Row>
-        <Row ><Col>Cloud</Col> <Col >{city.clouds.all}%</Col></Row>
-        <Row><Col>Wind</Col> <Col >
+        <Row ><Col xs={6} md={4}>Cloud</Col> <Col xs={6} sm={4}>{city.clouds.all}%</Col></Row>
+        <Row><Col xs={6} md={4}>Wind</Col> <Col xs={6} md={4}>
           speed: {city.wind.speed} |
           deg: {city.wind.deg}° |
           gust: {city.wind.gust} </Col></Row>
-        <Row ><Col>Humidity</Col> <Col >{city.main.humidity}%</Col></Row>
-        <Row ><Col>Sea level</Col> <Col >{city.main.sea_level || "Not available"}</Col></Row>
-        <Row ><Col>Population</Col> <Col >{city.population || 'Not available'}</Col></Row>
-        <Row><Col>Approximate distance</Col> <Col >{city.distance && city.distance + "KM" || 'Not available'}</Col></Row>
-        <Row><Col>Coordinate</Col> <Col><div>Lat: {city.coord.lat}</div><div>Lat: {city.coord.lat}</div></Col></Row>
+        <Row ><Col xs={6} md={4}>Humidity</Col> <Col xs={6} md={4}>{city.main.humidity}%</Col></Row>
+        <Row ><Col xs={6} md={4}>Sea level</Col > <Col xs={6} md={4}>{city.main.sea_level || "Not available"}</Col></Row>
+        <Row ><Col xs={6} md={4}>Population</Col> <Col xs={6} md={4}>{city.population || 'Not available'}</Col></Row>
+        <Row><Col xs={6} md={4}>Approximate distance</Col> <Col xs={6} md={4}>{city.distance && city.distance + "KM" || 'Not available'}</Col></Row>
+        <Row><Col xs={6} md={4}>Coordinate</Col> <Col xs={6} md={4}><div>Lat: {city.coord.lat}</div><div>Lat: {city.coord.lat}</div></Col></Row>
       </Container> || <div>No city found</div>}
+      {icon}
       <button onClick={() => navigate('/')}>Home</button>
     </div>
   )
