@@ -2,13 +2,16 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux'
 import Weather from '../components/Weather';
+import FilteredCities from '../components/FilteredCities';
 export default function Home() {
   const cities = useSelector(store => store.cities);
+  const filterType = useSelector(store => store.filter);
   const myCity = cities.filter(city => city.nearMe === 0);
   const cityNearMe = cities.filter(city => city.nearMe === 1);
   const otherCities = cities.filter(city => city.nearMe === 2);
+  console.log(cities)
   return (
-    <Container>
+    (filterType === 'All') && < Container >
       <h3>My cities</h3>
       <Row >
         {myCity.length > 0 && myCity.map(city => <Weather key={city.id} city={city} />) || <p>You havent checked any city yet</p>}
@@ -23,6 +26,6 @@ export default function Home() {
       <Row >
         {otherCities.length > 0 && otherCities.map(city => <Weather key={city.id} city={city} />) || <p>You haven't checked other cities</p>}
       </Row>
-    </Container>
+    </ Container> || <FilteredCities filter={filterType} cities={cities} />
   )
 }
