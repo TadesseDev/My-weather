@@ -35,8 +35,8 @@ export default function Detail() {
         <Row ><Col xs={6} md={4}>Population</Col> <Col xs={6} md={4}>{city.population || 'Not available'}</Col></Row>
         <Row><Col xs={6} md={4}>Approximate distance</Col> <Col xs={6} md={4}>{city.distance && city.distance + "KM" || 'Not available'}</Col></Row>
         <Row><Col xs={6} md={4}>Coordinate</Col> <Col xs={6} md={4}><div>Lat: {city.coord.lat}</div><div>Lat: {city.coord.lat}</div></Col></Row>
+        {icon}
       </Container> || <div>No city found</div>}
-      {icon}
       <button onClick={() => navigate('/')}>Home</button>
     </div>
   )
