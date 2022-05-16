@@ -16,7 +16,7 @@ export default function FilteredCities({ filter, cities }) {
           }
         })}
       </Row>
-      {noMatchFound && <p>Sorry, we could not foun match for this category</p>}
+      {noMatchFound && <p>Sorry, we could not found match for this category</p>}
     </Container>
   )
 }

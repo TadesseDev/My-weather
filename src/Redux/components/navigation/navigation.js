@@ -11,13 +11,11 @@ export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
   const cityInfo = await cityWeather(city.lat, city.lon);
   const { name, distance = false, population = 0, country, country: countryCode } = city;
   const { clouds, coord, main, wind, weather, unit } = cityInfo;
-  console.log(city);
   const action = {
     type: ADD_SINGLE_CITY,
     payload: { id: v4(), name, distance, population, nearMe: 0, country, countryCode, clouds, coord, weather, unit, main, wind }
   }
   dispatch(action);
-  console.log(action);
   navigator(`/detail?id=${action.payload.id}`);
 }
 

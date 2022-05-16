@@ -9,7 +9,6 @@ export default function Home() {
   const myCity = cities.filter(city => city.nearMe === 0);
   const cityNearMe = cities.filter(city => city.nearMe === 1);
   const otherCities = cities.filter(city => city.nearMe === 2);
-  console.log(cities)
   return (
     (filterType === 'All') && < Container >
       <h3>My cities</h3>

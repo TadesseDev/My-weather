@@ -12,7 +12,6 @@ export default function Navigation() {
     updateCityToSearch(() => event.target.value)
   }
   const searchCity = () => {
-    console.log(cityToSearch);
     dispatch(searchAndAddCity(cityToSearch, navigate));
   }
   const filter = (event) => {
