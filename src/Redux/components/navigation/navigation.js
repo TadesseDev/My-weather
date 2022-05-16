@@ -5,18 +5,24 @@ const ADD_SINGLE_CITY = "Redux/components/navigation/navigation/ADD_SINGLE_CITY"
 const APPLY_FILTER = "Redux/components/navigation/navigation/TRUE";
 const REMOVE_FILTER = "Redux/components/navigation/navigation/false";
 
-export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
-  let city = await getCityDetail(cityName);
-  city = city[0];
-  const cityInfo = await cityWeather(city.lat, city.lon);
-  const { name, distance = false, population = 0, country, country: countryCode } = city;
-  const { clouds, coord, main, wind, weather, unit } = cityInfo;
-  const action = {
-    type: ADD_SINGLE_CITY,
-    payload: { id: v4(), name, distance, population, nearMe: 0, country, countryCode, clouds, coord, weather, unit, main, wind }
+export const searchAndAddCity = (cityName, navigator, result) => async (dispatch) => {
+  try {
+    let city = await getCityDetail(cityName);
+    city = city[0];
+    if (!city)
+      throw Error('No city found');
+    const cityInfo = await cityWeather(city.lat, city.lon);
+    const { name, distance = false, population = 0, country, country: countryCode } = city;
+    const { clouds, coord, main, wind, weather, unit } = cityInfo;
+    const action = {
+      type: ADD_SINGLE_CITY,
+      payload: { id: v4(), name, distance, population, nearMe: 0, country, countryCode, clouds, coord, weather, unit, main, wind }
+    }
+    dispatch(action);
+    navigator(`/detail?id=${action.payload.id}`);
+  } catch (error) {
+    navigator(`/error?message=city-not-found`);
   }
-  dispatch(action);
-  navigator(`/detail?id=${action.payload.id}`);
 }
 
 export const applyFilter = (filterType, navigate) => {
