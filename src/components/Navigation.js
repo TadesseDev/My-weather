@@ -18,9 +18,15 @@ export default function Navigation() {
   return (
     <div id="navigation">
       <Container>
-        <div id="filter">
-
-        </div>
+        <form id="filter">
+          <label for="category">Category</label>
+          <select name="category" id="category">
+            <option value="All">All</option>
+            <option value="My cities">My cities</option>
+            <option value="Near by cities">Near by cities</option>
+            <option value="Major cities">Major cities</option>
+          </select>
+        </form>
         <div id="search">
           <input type="text"
             placeholder="Search your city"
