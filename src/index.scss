@@ -18,6 +18,17 @@ body {
   color: var(--secondary);
 }
 
+.home {
+  display: block;
+  margin: 0 auto;
+  padding: 1vw 5vw;
+  background-color: var(--mainDark);
+  color: white;
+}
+.home:hover {
+  border: 2px solid white;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   background-color: var(--mainDark);

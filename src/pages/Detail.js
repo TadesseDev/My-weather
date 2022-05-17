@@ -37,7 +37,7 @@ export default function Detail() {
         <Row><Col xs={6} md={4}>Coordinate</Col> <Col xs={6} md={4}><div>Lat: {city.coord.lat}</div><div>Lat: {city.coord.lat}</div></Col></Row>
         {icon}
       </Container> || <div>No city found</div>}
-      <button onClick={() => navigate('/')}>Home</button>
+      <button className="home" onClick={() => navigate('/')}>Home</button>
     </div>
   )
 }
