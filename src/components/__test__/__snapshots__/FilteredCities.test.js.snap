@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot the check for the FilteredCities should match the snapshot 1`] = `
+<div
+  className="container"
+>
+  <h3>
+    My cities
+  </h3>
+  <div
+    className="row"
+  />
+  <p>
+    Sorry, we could not found match for this category
+  </p>
+</div>
+`;
