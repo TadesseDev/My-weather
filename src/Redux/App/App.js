@@ -9,7 +9,6 @@ const updateStoreWithCityData = (cities, nearMe, dispatch) => {
   cities.forEach(async city => {
     try {
       const cityInfo = await cityWeather(city.latitude, city.longitude)
-      console.log('get back data from city weather');
       const { name, distance = false, population, country, countryCode } = city;
       const { clouds, coord, main, wind, weather, unit } = cityInfo;
       dispatch({

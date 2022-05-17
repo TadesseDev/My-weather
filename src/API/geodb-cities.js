@@ -1,7 +1,6 @@
 import { getNearByCity } from '../GLOBAL/endPoints'
 
 const fetchCitiesData = async (latitude = '40.730610', longitude = '-73.935242') => {
-  console.log('Geo city')
   const options = {
     method: 'GET',
     headers: {

@@ -1,6 +1,5 @@
 
 const cityWeather = (cityLatitude, cityLongitude, unit = "metric") => {
-  console.log("getting mock data")
   return {
     "coord": {
       "lon": -3.7103,
