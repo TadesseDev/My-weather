@@ -21,7 +21,7 @@ const updateStoreWithCityData = (cities, nearMe, dispatch) => {
   });
 }
 
-const routeCityData = async (dispatch, latitude, longitude) => {
+export const routeCityData = async (dispatch, latitude, longitude) => {
   let cities = [];
   if (latitude && longitude) {
     try {
@@ -35,13 +35,16 @@ const routeCityData = async (dispatch, latitude, longitude) => {
   updateStoreWithCityData(MAJOR_CITIES, 2, dispatch);
 }
 
-export const updateInitialData = () => (dispatch) => {
-  navigator.geolocation.getCurrentPosition(({ coords }) => {
-    routeCityData(dispatch, coords.latitude, coords.longitude);
-  }, denied => {
-    routeCityData(dispatch);
-    console.error("we cannot retrieve cities near you, we need your permission", denied);
-  });
+export const updateInitialData = () => {
+  console.log("calling the function");
+  return (dispatch) => {
+    navigator.geolocation.getCurrentPosition(({ coords }) => {
+      routeCityData(dispatch, coords.latitude, coords.longitude);
+    }, denied => {
+      routeCityData(dispatch);
+      console.error("we cannot retrieve cities near you, we need your permission", denied);
+    });
+  }
 }
 
 export default function appReducer(state = [], action) {
