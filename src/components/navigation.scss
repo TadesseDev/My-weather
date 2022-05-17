@@ -8,6 +8,9 @@ select {
   padding: 10px;
   font-size: 1rem;
 }
+::placeholder {
+  color: var(--main);
+}
 #navigation {
   margin-bottom: 20px;
   padding: 4vw;
