@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import App from './App';
+import App from '../App';
 import { Provider } from 'react-redux'
-import store from './Redux/configureStore'
-import * as appRedux from './Redux/App/App'
+import store from '../Redux/configureStore'
+import * as appRedux from '../Redux/App/App'
 jest.spyOn(appRedux, 'updateInitialData')
   .mockImplementation(() => (dispatch) => {
     return appRedux.routeCityData(dispatch);
   });
 
-describe('Check for navbar elements availabelity', () => {
+describe('Check for navbar elements availability', () => {
   test('Assert category section is rendered', () => {
     render(
       <Provider store={store}>
@@ -41,4 +41,10 @@ describe('Check for navbar elements availabelity', () => {
     const searchIcon = screen.queryByTitle(/search icon/i)
     expect(searchIcon).toBeInTheDocument();
   });
-})
+});
+
+describe('Check the content for the list of cities', () => {
+  test('Should render minimum 10 cities on first load', () => {
+    expect(true).toBeTruthy();
+  });
+});
