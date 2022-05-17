@@ -35,10 +35,10 @@ const routeCityData = async (dispatch, latitude, longitude) => {
   updateStoreWithCityData(MAJOR_CITIES, 2, dispatch);
 }
 
-export const updateInitialData = () => async (dispatch) => {
-  navigator.geolocation.getCurrentPosition(async ({ coords }) => {
+export const updateInitialData = () => (dispatch) => {
+  navigator.geolocation.getCurrentPosition(({ coords }) => {
     routeCityData(dispatch, coords.latitude, coords.longitude);
-  }, async denied => {
+  }, denied => {
     routeCityData(dispatch);
     console.error("we cannot retrieve cities near you, we need your permission", denied);
   });
