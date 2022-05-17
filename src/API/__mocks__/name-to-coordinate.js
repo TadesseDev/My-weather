@@ -146,6 +146,6 @@ const data =
     }
   ];
 const getCityDetail = async (cityName) => {
-  return Promise.resolve(data);
+  return data;
 }
 export default getCityDetail;
