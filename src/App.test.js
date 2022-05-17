@@ -15,6 +15,6 @@ test('Render category react link', () => {
       <App />
     </Provider>
   );
-  const linkElement = screen.getByText("All");
-  expect(linkElement).toBeInTheDocument();
+  let category = screen.getByText("All");
+  expect(category).toBeInTheDocument();
 });
