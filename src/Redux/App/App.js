@@ -36,7 +36,6 @@ export const routeCityData = async (dispatch, latitude, longitude) => {
 }
 
 export const updateInitialData = () => {
-  console.log("calling the function");
   return (dispatch) => {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
       routeCityData(dispatch, coords.latitude, coords.longitude);
