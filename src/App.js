@@ -10,6 +10,8 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(updateInitialData());
+    // console.log("return is", updateInitialData());
+    // console.log("returning APP");
   }, []);
   return (
     <BrowserRouter>
