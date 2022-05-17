@@ -5,7 +5,7 @@ export default function Error() {
   const errorMessage = getParam.get('message');
   const navigate = useNavigate();
   return (
-    <div id="error" style={{ "text-align": "center" }}>
+    <div id="error" style={{ "textAlign": "center" }}>
       <h1>Error</h1>
       <h3>{errorMessage}</h3>
       <button className="home" onClick={() => navigate('/')}>Home</button>
