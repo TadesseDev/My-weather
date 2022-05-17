@@ -11,7 +11,7 @@ export default function Weather({ city }) {
       lg={3}
       className="p-0"
       onClick={() => navigate(`/detail?id=${city.id}`)}
-      data-testid="city-weather">
+      title="city-weather">
       <Card className="w-100 h-100">
         <Card.Body>
           <Card.Title>
