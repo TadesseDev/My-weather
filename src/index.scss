@@ -29,6 +29,10 @@ body {
   border: 2px solid white;
 }
 
+.warning {
+  text-align: center;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   background-color: var(--mainDark);

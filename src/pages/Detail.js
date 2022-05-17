@@ -14,7 +14,7 @@ export default function Detail() {
     }
   });
   const icon = useSelector(store =>
-    store.weatherIcons.get(city.weather[0].description));
+    store.weatherIcons.get(city && city.weather[0].description));
   return (
     <div id="detail">
       {city && <Container>
@@ -36,7 +36,7 @@ export default function Detail() {
         <Row><Col xs={6} md={4}>Approximate distance</Col> <Col xs={6} md={4}>{city.distance && city.distance + "KM" || 'Not available'}</Col></Row>
         <Row><Col xs={6} md={4}>Coordinate</Col> <Col xs={6} md={4}><div>Lat: {city.coord.lat}</div><div>Lat: {city.coord.lat}</div></Col></Row>
         {icon}
-      </Container> || <div>No city found</div>}
+      </Container> || <p className="warning">No city found</p>}
       <button className="home" onClick={() => navigate('/')}>Home</button>
     </div>
   )
