@@ -4,6 +4,7 @@ export default function Error() {
   const [getParam, setParam] = useSearchParams();
   const errorMessage = getParam.get('message');
   const navigate = useNavigate();
+  console.log("rendering errore fetch")
   return (
     <div id="error" style={{ "textAlign": "center" }}>
       <h1>Error</h1>

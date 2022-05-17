@@ -1,16 +1,19 @@
 import { render, screen } from '@testing-library/react'
 import Error from '../Error';
+import '@testing-library/jest-dom';
 import { Provider } from 'react-redux'
 import store from '../../Redux/configureStore'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 describe('error page test', () => {
-  render(
-    <BrowserRouter>
-      <Provider store={store}>
-        <Error />
-      </Provider>
-    </BrowserRouter>);
   test('Should display the error message', () => {
-
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Error />
+        </BrowserRouter>
+      </Provider>);
+    const error = screen.getByText(/error/i);
+    console.log(error)
+    expect(error).toBeInTheDocument();
   })
 });
