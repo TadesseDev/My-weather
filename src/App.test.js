@@ -9,12 +9,36 @@ jest.spyOn(appRedux, 'updateInitialData')
     return appRedux.routeCityData(dispatch);
   });
 
-test('Render category react link', () => {
-  render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
-  let category = screen.getByText("All");
-  expect(category).toBeInTheDocument();
-});
+describe('Check for navbar elements availabelity', () => {
+  test('Assert category section is rendered', () => {
+    render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+    let category = screen.getByText("All");
+    expect(category).toBeInTheDocument();
+    category = screen.getByPlaceholderText(/search your city/i)
+    expect(category).toBeInTheDocument();
+  });
+
+  test('Assert search area is rendered', () => {
+    render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+    const searchArea = screen.getByPlaceholderText(/search your city/i)
+    expect(searchArea).toBeInTheDocument();
+  });
+
+  test('Assert search Icon is rendered', () => {
+    render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+    const searchIcon = screen.queryByTitle(/search icon/i)
+    expect(searchIcon).toBeInTheDocument();
+  });
+})

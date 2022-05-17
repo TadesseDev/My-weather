@@ -38,6 +38,7 @@ export default function Navigation() {
             onChange={updateSearchValue}
             value={cityToSearch} />
           <CgSearchLoading
+            title="search icon"
             className="searchIcon"
             onClick={searchCity} />
         </div>
