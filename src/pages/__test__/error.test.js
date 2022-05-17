@@ -13,7 +13,6 @@ describe('error page test', () => {
         </BrowserRouter>
       </Provider>);
     const error = screen.getByText(/error/i);
-    console.log(error)
     expect(error).toBeInTheDocument();
   })
 });
