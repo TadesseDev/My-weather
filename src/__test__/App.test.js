@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import * as appRedux from '../Redux/App/App'
 import MockAppComponent from '../__mocks__/RenderAppWithProvider'
+jest.mock('logger')
 jest.spyOn(appRedux, 'updateInitialData')
   .mockImplementation(() => (dispatch) => {
     return appRedux.routeCityData(dispatch);
@@ -36,7 +37,13 @@ describe('Check for navbar elements availability', () => {
 });
 
 describe('Check the content for the list of cities', () => {
-  test('Should render minimum 10 cities on first load', () => {
-    expect(true).toBeTruthy();
+
+  test('Should render initial on first load', async () => {
+    render(
+      <MockAppComponent />
+    );
+    const listOfCities = await screen.findAllByTestId(/city-weather/i, { timeout: 50000 });
+    console.log("list of cities are", listOfCities.length);
+    expect(listOfCities.length >= 10).toBeTruthy();
   });
 });

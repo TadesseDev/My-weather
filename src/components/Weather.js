@@ -6,7 +6,12 @@ export default function Weather({ city }) {
   const navigate = useNavigate();
   const weatherIcons = useSelector(store => store.weatherIcons);
   return (
-    <Col xs={6} sm={6} lg={3} className="p-0" onClick={() => navigate(`/detail?id=${city.id}`)}>
+    <Col xs={6}
+      sm={6}
+      lg={3}
+      className="p-0"
+      onClick={() => navigate(`/detail?id=${city.id}`)}
+      data-testid="city-weather">
       <Card className="w-100 h-100">
         <Card.Body>
           <Card.Title>
