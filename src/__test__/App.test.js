@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import * as appRedux from '../Redux/App/App'
-import MockAppComponent from '../__mocks__/RenderAppWithProvider'
+import MockAppComponent from '../__mocks__/MockAppComponent'
 jest.mock('../API/currentWeatherData');
 jest.spyOn(appRedux, 'updateInitialData')
   .mockImplementation(() => (dispatch) => {

@@ -1,5 +1,5 @@
 import renderer from 'react-test-renderer';
-import MockAppComponent from '../__mocks__/RenderAppWithProvider'
+import MockAppComponent from '../__mocks__/MockAppComponent'
 import * as appRedux from '../Redux/App/App'
 jest.spyOn(appRedux, 'updateInitialData')
   .mockImplementation(() => (dispatch) => {
