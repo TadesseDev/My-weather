@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default function Weather({ city }) {
   const navigate = useNavigate();
@@ -32,3 +33,7 @@ export default function Weather({ city }) {
     </Col>
   );
 }
+
+Weather.propTypes = {
+  city: PropTypes.func.isRequired,
+};

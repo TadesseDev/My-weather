@@ -13,6 +13,7 @@ exports[`Snapshot check for the Detail page should match the snapshot 1`] = `
   <button
     className="home"
     onClick={[Function]}
+    type="submit"
   >
     Home
   </button>

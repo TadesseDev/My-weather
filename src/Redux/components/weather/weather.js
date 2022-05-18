@@ -6,7 +6,9 @@ import { IoIosPartlySunny } from 'react-icons/io';
 
 const ADD_NEW_WEATHER_ICON = 'Redux/components/weather/weather/ADD_NEW_WEATHER_ICON';
 
-export const addNewWeatherInfo = (key, value) => ({ action: ADD_NEW_WEATHER_ICON, payload: { key, value } });
+export const addNewWeatherInfo = (key, value) => ({
+  action: ADD_NEW_WEATHER_ICON, payload: { key, value },
+});
 
 const initialWeatherIcons = new Map();
 initialWeatherIcons.set('light rain', <GiRaining className="weather-icon" />);
@@ -17,9 +19,9 @@ initialWeatherIcons.set('scattered clouds', <BsCloudHaze className="weather-icon
 initialWeatherIcons.set('clear sky', <BsFillSunFill className="weather-icon" />);
 
 const weatherIconsReducer = (state = initialWeatherIcons, action) => {
+  const result = new Map();
   switch (action.type) {
     case ADD_NEW_WEATHER_ICON:
-      const result = new Map();
       state.forEach((key, value) => {
         result.set(key, value);
       });

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import Error from '../Error';
 import '@testing-library/jest-dom';
-import MockRender from '../__mocks__/MockRender';
 import renderer from 'react-test-renderer';
+import MockRender from '../__mocks__/MockRender';
+import Error from '../Error';
 
 describe('error page test', () => {
   test('Should display the error message', () => {

@@ -1,5 +1,5 @@
 import {
-  fireEvent, render, screen, act,
+  fireEvent, render, screen,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import * as appRedux from '../Redux/App/App';
