@@ -1,4 +1,4 @@
-i# Your daily weather
+# Your daily weather
 
 > This app enables users to get instant Information regarding weather conditions. If you share your location, it will fetch the top 10 cities near you and all the weather detail for each.
 
@@ -11,13 +11,16 @@ i# Your daily weather
 - Redux
 - API Gateway
 
-## Screenshot
+## Screenshots
+
+### Mobile
 
 <img src="./src/resources/weather-mobile.PNG" width="45%"></img>
 <img src="./src/resources/weather-mobile2.PNG" width="45%"></img>
-<img src="./src/resources/weather-list.PNG" width="100%"></img>
 
-#### comming soon
+### Desktop
+
+<img src="./src/resources/weather-list.PNG" width="100%"></img>
 
 ## Live Demo
 
@@ -28,7 +31,12 @@ i# Your daily weather
 1. Open [dev branch](https://github.com/Tadesse-Alemayehu/weather-now)
 2. Open VSCode or terminal and navigate to the folder where you would like to clone the project.
 3. Type "pwd" to see your working directory.
-4. [clone repository](https://github.com/Tadesse-Alemayehu/weather-now)(git clone "branch-link")
+4. [clone repository](https://github.com/Tadesse-Alemayehu/weather-now)
+
+```bash
+$ git clone https://github.com/Tadesse-Alemayehu/weather-now
+```
+
 5. Run
 
 ```bash
