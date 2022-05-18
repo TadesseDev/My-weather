@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot check for the Detail page should match the snapshot 1`] = `
+<div
+  id="detail"
+>
+  <p
+    className="warning"
+  >
+    No city found
+  </p>
+  <button
+    className="home"
+    onClick={[Function]}
+  >
+    Home
+  </button>
+</div>
+`;
