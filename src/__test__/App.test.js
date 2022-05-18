@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import * as appRedux from '../Redux/App/App'
 import MockAppComponent from '../__mocks__/MockAppComponent'
@@ -14,8 +14,6 @@ describe('Check for navbar elements availability', () => {
       <MockAppComponent />
     );
     let category = screen.getByText("All");
-    expect(category).toBeInTheDocument();
-    category = screen.getByPlaceholderText(/search your city/i)
     expect(category).toBeInTheDocument();
   });
 
@@ -44,5 +42,21 @@ describe('Check the content for the list of cities', () => {
     );
     const listOfCities = await screen.findAllByTitle(/city-weather/i);
     expect(listOfCities.length >= 10).toBeTruthy();
+  });
+});
+
+describe('Integration test for the search bar', () => {
+
+  test('Should search city, and respond with city data', async () => {
+    render(
+      <MockAppComponent />
+    );
+    const searchIcon = screen.queryByTitle(/search icon/i)
+    const searchArea = screen.getByPlaceholderText(/search your city/i)
+    expect(searchArea).toBeInTheDocument();
+    expect(searchIcon).toBeInTheDocument();
+    fireEvent.change(searchArea, { target: { value: "Bahir dar" } });
+    fireEvent.click(searchIcon);
+    // expect(await screen.findByText(/Bahir dar/i)).toBeInTheDocument();
   });
 });
