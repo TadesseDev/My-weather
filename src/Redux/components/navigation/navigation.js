@@ -45,8 +45,7 @@ export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
 };
 
 export const applyFilter = (filterType, navigate) => {
-  if (navigate)
-    navigate('/');
+  if (navigate) navigate('/');
   return { type: APPLY_FILTER, payload: filterType };
 };
 export const removeFilter = () => ({ type: REMOVE_FILTER });

@@ -1,52 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snapshot check for the Home page should match the snapshot 1`] = `
-<div
-  className="container"
->
+Array [
   <h3
     className="title"
   >
     My cities
-  </h3>
+  </h3>,
   <div
-    className="row"
+    className="container"
   >
-    <p
-      className="warning"
+    <div
+      className="row"
     >
-      You havent checked any city yet
-    </p>
-  </div>
-  <hr />
+      <p
+        className="warning"
+      >
+        You haven't checked any city yet
+      </p>
+    </div>
+    <hr />
+  </div>,
   <h3
     className="title"
   >
     Cities near you
-  </h3>
+  </h3>,
   <div
-    className="row"
+    className="container"
   >
-    <p
-      className="warning"
+    <div
+      className="row"
     >
-      We couldn't find your location
-    </p>
-  </div>
-  <hr />
+      <p
+        className="warning"
+      >
+        We couldn't find your location
+        <br />
+         
+        make sure to allow a location
+      </p>
+    </div>
+    <hr />
+  </div>,
   <h3
     className="title"
   >
     Other cities
-  </h3>
+  </h3>,
   <div
-    className="row"
+    className="container"
   >
-    <p
-      className="warning"
+    <div
+      className="row"
     >
-      You haven't checked other cities
-    </p>
-  </div>
-</div>
+      <p
+        className="warning"
+      >
+        You haven't checked other cities
+      </p>
+    </div>
+  </div>,
+]
 `;

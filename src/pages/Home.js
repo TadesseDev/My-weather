@@ -18,14 +18,24 @@ export default function Home() {
           <h3 className="title">My cities</h3>
           <Container>
             <Row>
-              {((myCity.length > 0 && myCity.map((city) => <Weather key={city.id} city={city} />)) || (<p className="warning">You haven&apos;t checked any city yet</p>))}
+              {((myCity.length > 0 && myCity.map((city) => <Weather key={city.id} city={city} />))
+                || (<p className="warning">You haven&apos;t checked any city yet</p>))}
             </Row>
             <hr />
           </Container>
           <h3 className="title">Cities near you</h3>
           <Container>
             <Row>
-              {(cityNearMe.length > 0 && cityNearMe.map((city) => <Weather key={city.id} city={city} />)) || <p className="warning">We couldn&apos;t find your location<br /> make sure to allow a location</p>}
+              {(cityNearMe.length > 0
+                && cityNearMe.map((city) => <Weather key={city.id} city={city} />))
+                || (
+                  <p className="warning">
+                    We couldn&apos;t find your location
+                    <br />
+                    {' '}
+                    make sure to allow a location
+                  </p>
+                )}
             </Row>
             <hr />
           </Container>

@@ -9,8 +9,7 @@ import { applyFilter } from '../Redux/components/navigation/navigation';
 function FilteredCities({ filter, cities }) {
   const dispatch = useDispatch();
   const cancelFilter = () => {
-    console.log("dispatching cancel");
-    dispatch(applyFilter("All"));
+    dispatch(applyFilter('All'));
   };
   let filterValue = '';
   if (filter === 'My cities') filterValue = 0;

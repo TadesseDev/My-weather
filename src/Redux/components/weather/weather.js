@@ -1,5 +1,5 @@
 import {
-  BsFillCloudDrizzleFill, BsFillCloudFog2Fill, BsFillSunFill, BsCloudHaze, BsFillCloudFill
+  BsFillCloudDrizzleFill, BsFillCloudFog2Fill, BsFillSunFill, BsCloudHaze, BsFillCloudFill,
 } from 'react-icons/bs';
 import { GiRaining } from 'react-icons/gi';
 import { IoIosPartlySunny } from 'react-icons/io';
