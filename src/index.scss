@@ -3,11 +3,13 @@
   --mainDark: #004158;
   --secondary: #fefbd2;
 }
+
 * {
   background-color: transparent;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
+
 html,
 body {
   margin: 0;
@@ -25,6 +27,7 @@ body {
   background-color: var(--mainDark);
   color: white;
 }
+
 .home:hover {
   border: 2px solid white;
 }

@@ -8,20 +8,25 @@ select {
   padding: 10px;
   font-size: 1rem;
 }
+
 ::placeholder {
   color: var(--main);
 }
+
 #navigation {
   margin-bottom: 20px;
   padding: 4vw;
   background-color: var(--mainDark);
+
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     #search {
       max-width: 45%;
       position: relative;
+
       .searchIcon {
         position: absolute;
         right: 0;
@@ -31,15 +36,18 @@ select {
         color: var(--main);
       }
     }
+
     #filter {
       width: 45%;
       max-width: 50%;
+
       option {
         background-color: var(--mainDark);
       }
     }
   }
 }
+
 p {
   margin: 0;
   padding: 0;

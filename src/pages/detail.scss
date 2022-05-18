@@ -1,6 +1,7 @@
 #detail {
   .container {
     position: relative;
+
     .row {
       justify-content: center;
       border: 2px solid var(--mainDark);
@@ -8,8 +9,10 @@
       margin: 1vw 2vw;
     }
   }
+
   .row:first-child {
     position: relative;
+
     .weather-icon {
       color: white;
       z-index: 0;
