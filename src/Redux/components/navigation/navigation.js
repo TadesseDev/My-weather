@@ -6,12 +6,12 @@ const ADD_SINGLE_CITY = 'Redux/components/navigation/navigation/ADD_SINGLE_CITY'
 const APPLY_FILTER = 'Redux/components/navigation/navigation/TRUE';
 const REMOVE_FILTER = 'Redux/components/navigation/navigation/false';
 
-export const searchAndAddCity = (cityName, navigator, result) => async (dispatch) => {
+export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
   try {
     console.log('the data we get', 'none');
     let city = await getCityDetail(cityName);
     console.log('the data we get', city);
-    city = city[0];
+    [city] = city;
     if (!city) { throw Error('No city found'); }
     const cityInfo = await cityWeather(city.lat, city.lon);
     const {
@@ -23,7 +23,19 @@ export const searchAndAddCity = (cityName, navigator, result) => async (dispatch
     const action = {
       type: ADD_SINGLE_CITY,
       payload: {
-        id: v4(), name, distance, population, nearMe: 0, country, countryCode, clouds, coord, weather, unit, main, wind,
+        id: v4(),
+        name,
+        distance,
+        population,
+        nearMe: 0,
+        country,
+        countryCode,
+        clouds,
+        coord,
+        weather,
+        unit,
+        main,
+        wind,
       },
     };
     dispatch(action);

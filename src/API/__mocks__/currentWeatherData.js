@@ -1,4 +1,4 @@
-const cityWeather = (cityLatitude, cityLongitude, unit = 'metric') => ({
+const cityWeather = () => ({
   coord: {
     lon: -3.7103,
     lat: 40.4023,

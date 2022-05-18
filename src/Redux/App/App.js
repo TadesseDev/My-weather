@@ -19,7 +19,19 @@ const updateStoreWithCityData = (cities, nearMe, dispatch) => {
       dispatch({
         type: UPDATE_CITIES,
         payload: [{
-          id: v4(), name, distance, population, nearMe, country, countryCode, clouds, coord, weather, unit, main, wind,
+          id: v4(),
+          name,
+          distance,
+          population,
+          nearMe,
+          country,
+          countryCode,
+          clouds,
+          coord,
+          weather,
+          unit,
+          main,
+          wind,
         }],
       });
     } catch (error) {
