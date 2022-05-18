@@ -8,9 +8,7 @@ const REMOVE_FILTER = 'Redux/components/navigation/navigation/false';
 
 export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
   try {
-    console.log('the data we get', 'none');
     let city = await getCityDetail(cityName);
-    console.log('the data we get', city);
     [city] = city;
     if (!city) { throw Error('No city found'); }
     const cityInfo = await cityWeather(city.lat, city.lon);
@@ -42,7 +40,7 @@ export const searchAndAddCity = (cityName, navigator) => async (dispatch) => {
     navigator(`/detail?id=${action.payload.id}`);
   } catch (error) {
     navigator('/error?message=We could not find your city');
-    console.error('fail to fetch city', error);
+    throw Error('fail to fetch city', error);
   }
 };
 

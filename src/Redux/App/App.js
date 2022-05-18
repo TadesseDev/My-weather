@@ -35,7 +35,7 @@ const updateStoreWithCityData = (cities, nearMe, dispatch) => {
         }],
       });
     } catch (error) {
-      console.error('fail to fetch data for the ', city.name, ' ', error);
+      throw Error('fail to fetch data for the ', city.name, ' ', error);
     }
   });
 };
@@ -48,7 +48,7 @@ export const routeCityData = async (dispatch, latitude, longitude) => {
       cities = cities.data;
       updateStoreWithCityData(cities, 1, dispatch);
     } catch (error) {
-      console.error('fail to fetch cities near you ', error);
+      throw Error('fail to fetch cities near you ', error);
     }
   }
   updateStoreWithCityData(MAJOR_CITIES, 2, dispatch);
@@ -59,7 +59,7 @@ export const updateInitialData = () => (dispatch) => {
     routeCityData(dispatch, coords.latitude, coords.longitude);
   }, (denied) => {
     routeCityData(dispatch);
-    console.error('we cannot retrieve cities near you, we need your permission', denied);
+    throw Error('we cannot retrieve cities near you, we need your permission', denied);
   });
 };
 

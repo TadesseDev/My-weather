@@ -13,7 +13,7 @@ const fetchCitiesData = async (latitude = '40.730610', longitude = '-73.935242')
       .then((response) => response.json())
       .then((response) => response)
       .catch((err) => {
-        console.error(err);
+        throw Error(err);
       });
   } catch (error) {
     throw Error('fail to fetch cities near you: make sure you are connected to the internet', error);
