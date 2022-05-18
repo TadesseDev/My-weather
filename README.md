@@ -1,4 +1,4 @@
-# Your daily weather
+i# Your daily weather
 
 > This app enables users to get instant Information regarding weather conditions. If you share your location, it will fetch the top 10 cities near you and all the weather detail for each.
 
@@ -13,11 +13,15 @@
 
 ## Screenshot
 
+<img src="./src/resources/weather-mobile.PNG" width="45%"></img>
+<img src="./src/resources/weather-mobile2.PNG" width="45%"></img>
+<img src="./src/resources/weather-list.PNG" width="100%"></img>
+
 #### comming soon
 
 ## Live Demo
 
-[Coming soon]() 😎
+[Go Live](https://my-city-weather-app.netlify.app/) 😎
 
 ## Getting Started
 
