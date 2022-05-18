@@ -1,11 +1,12 @@
+import React, { useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import Error from './pages/Error';
-import React, { useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navigation from './components/Navigation'
-import { useDispatch } from 'react-redux';
-import { updateInitialData } from './Redux/App/App'
+import Navigation from './components/Navigation';
+import { updateInitialData } from './Redux/App/App';
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {

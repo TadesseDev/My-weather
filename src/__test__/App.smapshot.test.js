@@ -1,15 +1,14 @@
 import renderer from 'react-test-renderer';
-import MockAppComponent from '../__mocks__/MockAppComponent'
-import * as appRedux from '../Redux/App/App'
+import MockAppComponent from '../__mocks__/MockAppComponent';
+import * as appRedux from '../Redux/App/App';
+
 jest.spyOn(appRedux, 'updateInitialData')
-  .mockImplementation(() => (dispatch) => {
-    return appRedux.routeCityData(dispatch);
-  });
+  .mockImplementation(() => (dispatch) => appRedux.routeCityData(dispatch));
 describe('compare snapshot for the App', () => {
   test('Assert App matches its snapshot', () => {
     const appSnap = renderer.create(
-      <MockAppComponent />
+      <MockAppComponent />,
     ).toJSON();
-    expect(appSnap).toMatchSnapshot()
+    expect(appSnap).toMatchSnapshot();
   });
-})
+});

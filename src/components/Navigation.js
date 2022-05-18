@@ -2,23 +2,24 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import { CgSearchLoading } from 'react-icons/cg';
-import { searchAndAddCity, applyFilter } from '../Redux/components/navigation/navigation'
 import { useNavigate } from 'react-router-dom';
-import './navigation.scss'
+import { searchAndAddCity, applyFilter } from '../Redux/components/navigation/navigation';
+import './navigation.scss';
+
 export default function Navigation() {
-  const [cityToSearch, updateCityToSearch] = useState("");
+  const [cityToSearch, updateCityToSearch] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const updateSearchValue = (event) => {
-    updateCityToSearch(() => event.target.value)
-  }
+    updateCityToSearch(() => event.target.value);
+  };
   const searchCity = () => {
     dispatch(searchAndAddCity(cityToSearch, navigate));
-    updateCityToSearch(() => "");
-  }
+    updateCityToSearch(() => '');
+  };
   const filter = (event) => {
     dispatch(applyFilter(event.target.value, navigate));
-  }
+  };
   return (
     <div id="navigation">
       <Container>
@@ -26,7 +27,8 @@ export default function Navigation() {
           <select
             name="category"
             id="category"
-            onChange={filter}>
+            onChange={filter}
+          >
             <option value="All">All</option>
             <option value="My cities">My cities</option>
             <option value="Near by cities">Near by cities</option>
@@ -34,16 +36,19 @@ export default function Navigation() {
           </select>
         </div>
         <div id="search">
-          <input type="text"
+          <input
+            type="text"
             placeholder="Search your city"
             onChange={updateSearchValue}
-            value={cityToSearch} />
+            value={cityToSearch}
+          />
           <CgSearchLoading
             title="search icon"
             className="searchIcon"
-            onClick={searchCity} />
+            onClick={searchCity}
+          />
         </div>
       </Container>
     </div>
-  )
+  );
 }
