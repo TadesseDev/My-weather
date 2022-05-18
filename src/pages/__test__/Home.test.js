@@ -1,16 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import Error from '../Error';
+import Home from '../Home';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux'
 import store from '../../Redux/configureStore'
 import { BrowserRouter } from 'react-router-dom';
 import MockRender from '../__mocks__/MockRender'
-describe('error page test', () => {
+describe('Home page test', () => {
   test('Should display the error message', () => {
-    render(
-      MockRender(<Error />)
-    );
-    const error = screen.getByText(/error/i);
-    expect(error).toBeInTheDocument();
+    render(MockRender(<Home />));
+    const headings = screen.getAllByRole(/heading/i);
+    expect(headings.length >= 3).toBeTruthy();
   })
+
 });
