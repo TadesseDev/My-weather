@@ -1,5 +1,3 @@
-import { render, screen } from '@testing-library/react'
-import Home from '../Home';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux'
 import store from '../../Redux/configureStore'
