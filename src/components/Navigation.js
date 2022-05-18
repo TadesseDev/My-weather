@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Navbar, Container, Form } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { CgSearchLoading } from 'react-icons/cg';
-import { searchAndAddCity, applyFilter, removeFilter } from '../Redux/components/navigation/navigation'
+import { searchAndAddCity, applyFilter } from '../Redux/components/navigation/navigation'
 import { useNavigate } from 'react-router-dom';
 import './navigation.scss'
 export default function Navigation() {
@@ -14,6 +14,7 @@ export default function Navigation() {
   }
   const searchCity = () => {
     dispatch(searchAndAddCity(cityToSearch, navigate));
+    updateCityToSearch(() => "");
   }
   const filter = (event) => {
     dispatch(applyFilter(event.target.value, navigate));

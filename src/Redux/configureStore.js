@@ -10,5 +10,5 @@ const rootReducer = combineReducers({
   weatherIcons: weatherIconsReducer,
 })
 
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 export default store;

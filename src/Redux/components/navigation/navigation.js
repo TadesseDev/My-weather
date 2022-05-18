@@ -7,7 +7,9 @@ const REMOVE_FILTER = "Redux/components/navigation/navigation/false";
 
 export const searchAndAddCity = (cityName, navigator, result) => async (dispatch) => {
   try {
+    console.log("the data we get", 'none');
     let city = await getCityDetail(cityName);
+    console.log("the data we get", city);
     city = city[0];
     if (!city)
       throw Error('No city found');

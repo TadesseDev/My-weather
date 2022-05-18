@@ -2,6 +2,7 @@
 
 exports[`Snapshot check for the Detail page should match the snapshot 1`] = `
 <div
+  data-testid="city-detail-page"
   id="detail"
 >
   <p

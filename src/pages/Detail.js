@@ -16,7 +16,7 @@ export default function Detail() {
   const icon = useSelector(store =>
     store.weatherIcons.get(city && city.weather[0].description));
   return (
-    <div id="detail">
+    <div id="detail" data-testid="city-detail-page">
       {city && <Container>
         <Row>
           <h1>{city.name}</h1>

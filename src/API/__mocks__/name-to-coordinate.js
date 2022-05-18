@@ -145,7 +145,7 @@ const data =
       "state": "Dubai"
     }
   ];
-const getCityDetail = async (cityName) => {
+const getCityDetail = async () => {
   return data;
 }
 export default getCityDetail;

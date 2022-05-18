@@ -1,5 +1,6 @@
 import { searchCityEndPoint } from '../GLOBAL/endPoints';
 const getCityDetail = async (cityName) => {
+  console.log("getting a real data");
   try {
     const URL = searchCityEndPoint(cityName);
     let response = await fetch(URL);
