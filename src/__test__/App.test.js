@@ -56,11 +56,12 @@ describe('Integration test for the search bar', () => {
     const searchArea = screen.getByPlaceholderText(/search your city/i)
     expect(searchArea).toBeInTheDocument();
     expect(searchIcon).toBeInTheDocument();
-    fireEvent.change(searchArea, { target: { value: "Bahir dar" } });
-    expect(searchArea.value).toBe("Bahir dar");
+    fireEvent.change(searchArea, { target: { value: "Mexico City" } });
+    expect(searchArea.value).toBe("Mexico City");
     fireEvent.click(searchIcon);
     expect(searchArea.value).toBe("");
-    const searchPage = await screen.findByText('Mexico City')
-    console.log("search area  value is", searchPage)
+    const searchPage = await screen.findByText('Mexico City');
+    expect(searchPage).toBeInTheDocument();
+
   });
 });
