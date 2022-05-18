@@ -14,22 +14,38 @@ export default function Home() {
   return (
     (filterType === 'All'
       && (
-        <Container>
+        <>
           <h3 className="title">My cities</h3>
-          <Row>
-            {((myCity.length > 0 && myCity.map((city) => <Weather key={city.id} city={city} />)) || (<p className="warning">You havent checked any city yet</p>))}
-          </Row>
-          <hr />
+          <Container>
+            <Row>
+              {((myCity.length > 0 && myCity.map((city) => <Weather key={city.id} city={city} />))
+                || (<p className="warning">You haven&apos;t checked any city yet</p>))}
+            </Row>
+            <hr />
+          </Container>
           <h3 className="title">Cities near you</h3>
-          <Row>
-            {(cityNearMe.length > 0 && cityNearMe.map((city) => <Weather key={city.id} city={city} />)) || <p className="warning">We couldn&apos;t find your location</p>}
-          </Row>
-          <hr />
+          <Container>
+            <Row>
+              {(cityNearMe.length > 0
+                && cityNearMe.map((city) => <Weather key={city.id} city={city} />))
+                || (
+                  <p className="warning">
+                    We couldn&apos;t find your location
+                    <br />
+                    {' '}
+                    make sure to allow a location
+                  </p>
+                )}
+            </Row>
+            <hr />
+          </Container>
           <h3 className="title">Other cities</h3>
-          <Row>
-            {(otherCities.length > 0 && otherCities.map((city) => <Weather key={city.id} city={city} />)) || <p className="warning">You haven&apos;t checked other cities</p>}
-          </Row>
-        </Container>
+          <Container>
+            <Row>
+              {(otherCities.length > 0 && otherCities.map((city) => <Weather key={city.id} city={city} />)) || <p className="warning">You haven&apos;t checked other cities</p>}
+            </Row>
+          </Container>
+        </>
       )
     ) || <FilteredCities filter={filterType} cities={cities} />
   );

@@ -11,20 +11,32 @@
 - Redux
 - API Gateway
 
-## Screenshot
+## Screenshots
 
-#### comming soon
+### Mobile
+
+<img src="./src/resources/weather-mobile.PNG" width="45%"></img>
+<img src="./src/resources/weather-mobile2.PNG" width="45%"></img>
+
+### Desktop
+
+<img src="./src/resources/weather-list.PNG" width="100%"></img>
 
 ## Live Demo
 
-[Coming soon]() 😎
+[Go Live](https://my-city-weather-app.netlify.app/) 😎
 
 ## Getting Started
 
 1. Open [dev branch](https://github.com/Tadesse-Alemayehu/weather-now)
 2. Open VSCode or terminal and navigate to the folder where you would like to clone the project.
 3. Type "pwd" to see your working directory.
-4. [clone repository](https://github.com/Tadesse-Alemayehu/weather-now)(git clone "branch-link")
+4. [clone repository](https://github.com/Tadesse-Alemayehu/weather-now)
+
+```bash
+$ git clone https://github.com/Tadesse-Alemayehu/weather-now
+```
+
 5. Run
 
 ```bash
@@ -52,6 +64,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) for the initial design.
 - Microverse for amusing learning resources.
 - Microverse code reviewers.
 - You! 😄 yes you... for visiting.
