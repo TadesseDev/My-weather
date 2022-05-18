@@ -64,6 +64,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) for the initial design.
 - Microverse for amusing learning resources.
 - Microverse code reviewers.
 - You! 😄 yes you... for visiting.

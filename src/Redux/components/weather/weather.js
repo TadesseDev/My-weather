@@ -1,5 +1,5 @@
 import {
-  BsFillCloudDrizzleFill, BsFillCloudFog2Fill, BsFillSunFill, BsCloudHaze,
+  BsFillCloudDrizzleFill, BsFillCloudFog2Fill, BsFillSunFill, BsCloudHaze, BsFillCloudFill
 } from 'react-icons/bs';
 import { GiRaining } from 'react-icons/gi';
 import { IoIosPartlySunny } from 'react-icons/io';
@@ -17,6 +17,7 @@ initialWeatherIcons.set('few clouds', <IoIosPartlySunny className="weather-icon"
 initialWeatherIcons.set('broken clouds', <BsFillCloudFog2Fill className="weather-icon" />);
 initialWeatherIcons.set('scattered clouds', <BsCloudHaze className="weather-icon" />);
 initialWeatherIcons.set('clear sky', <BsFillSunFill className="weather-icon" />);
+initialWeatherIcons.set('default', <BsFillCloudFill className="weather-icon" />);
 
 const weatherIconsReducer = (state = initialWeatherIcons, action) => {
   const result = new Map();

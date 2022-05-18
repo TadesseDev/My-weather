@@ -28,7 +28,7 @@ export default function Weather({ city }) {
           {city.unit}
         </small>
         <small>{city.country}</small>
-        {weatherIcons.get(city.weather[0].description)}
+        {weatherIcons.get(city.weather[0].description) || weatherIcons.get("default")}
       </Card>
     </Col>
   );
