@@ -7,6 +7,7 @@ import Weather from './Weather';
 import { applyFilter } from '../Redux/components/navigation/navigation';
 
 function FilteredCities({ filter, cities }) {
+  console.log("creating a dispach action");
   const dispatch = useDispatch();
   const cancelFilter = () => {
     dispatch(applyFilter('All'));
