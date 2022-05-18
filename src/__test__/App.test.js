@@ -1,8 +1,9 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import * as appRedux from '../Redux/App/App'
 import MockAppComponent from '../__mocks__/MockAppComponent'
 jest.mock('../API/currentWeatherData');
+jest.mock('../API/name-to-coordinate');
 jest.spyOn(appRedux, 'updateInitialData')
   .mockImplementation(() => (dispatch) => {
     appRedux.routeCityData(dispatch);
@@ -56,7 +57,10 @@ describe('Integration test for the search bar', () => {
     expect(searchArea).toBeInTheDocument();
     expect(searchIcon).toBeInTheDocument();
     fireEvent.change(searchArea, { target: { value: "Bahir dar" } });
+    expect(searchArea.value).toBe("Bahir dar");
     fireEvent.click(searchIcon);
-    // expect(await screen.findByText(/Bahir dar/i)).toBeInTheDocument();
+    expect(searchArea.value).toBe("");
+    const searchPage = await screen.findByText('Mexico City')
+    console.log("search area  value is", searchPage)
   });
 });
