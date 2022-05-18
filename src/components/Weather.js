@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { BiRightArrowCircle } from 'react-icons/bi';
 
 export default function Weather({ city }) {
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ export default function Weather({ city }) {
         </small>
         <small>{city.country}</small>
         {weatherIcons.get(city.weather[0].description) || weatherIcons.get('default')}
+        <BiRightArrowCircle className="see-detail" />
       </Card>
     </Col>
   );
