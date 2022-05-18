@@ -1,3 +1,13 @@
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--mainDark);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #0298cd;
+}
+
 :root {
   --main: #0298cd;
   --mainDark: #004158;
@@ -34,14 +44,4 @@ body {
 
 .warning {
   text-align: center;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  background-color: var(--mainDark);
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: #0298cd;
 }
