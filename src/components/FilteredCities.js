@@ -1,9 +1,17 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { IoIosArrowBack } from 'react-icons/io';
 import PropTypes from 'prop-types';
 import Weather from './Weather';
+import { applyFilter } from '../Redux/components/navigation/navigation';
 
 function FilteredCities({ filter, cities }) {
+  const dispatch = useDispatch();
+  const cancelFilter = () => {
+    console.log("dispatching cancel");
+    dispatch(applyFilter("All"));
+  };
   let filterValue = '';
   if (filter === 'My cities') filterValue = 0;
   else if (filter === 'Near by cities') filterValue = 1;
@@ -22,6 +30,7 @@ function FilteredCities({ filter, cities }) {
         })}
       </Row>
       {noMatchFound && <p>Sorry, we could not found match for this category</p>}
+      <IoIosArrowBack className="back-icon" onClick={() => cancelFilter()} />
     </Container>
   );
 }
