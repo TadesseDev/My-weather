@@ -5,5 +5,5 @@ const app = express();
 app.listen(process.env.PORT || 5000, () => { console.log("app is running on port 4000") })
 
 app.get('/', (req, res) => {
-  res.send("Hitting the root server");
+  res.send("You are hitting the root server");
 });
