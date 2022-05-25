@@ -15,6 +15,7 @@ export default function Detail() {
     }
     return null;
   });
+  console.log(city);
   const icon = useSelector((store) => store.weatherIcons.get(city && city.weather[0].description) || store.weatherIcons.get('default'));
   return (
     <div id="detail" data-testid="city-detail-page">
