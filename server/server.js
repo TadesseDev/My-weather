@@ -5,22 +5,28 @@ dotenv.config()
 const app = express();
 app.listen(process.env.PORT || 5000, () => { console.log("app is running on port 4000") })
 
-function main() {
+function connect() {
   mongoose.connect('mongodb://localhost:27017/BookStore')
     .then(success => console.log("connected success"));
 }
+connect();
 
 app.get('/', (req, res) => {
   res.send("You are hitting the root server");
 });
 
-main();
+import BookStore from "./schema.js";
 
-const books = mongoose.Schema({
-  name: String
+const book = new BookStore({
+  name: 'New York',
+  country: 'United States of America',
+  countryCode: 'US',
+  region: 'New York',
+  coord: [42.63, -75.04,],
+  population: 8550405,
+  distance: 0,
 });
 
-const BooksConst = mongoose.model('myBooks', books);
+book.save();
 
-const SYOT = new BooksConst({ name: "say tou are one of them" });
-SYOT.save();
+console.log("end of file");
