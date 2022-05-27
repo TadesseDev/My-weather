@@ -1,12 +1,12 @@
 import express from "express";
 import dotenv from 'dotenv'
 import mongoose from 'mongoose';
-const { parsed: { PORT, USER_NAME, PASSWORD } } = dotenv.config();
+dotenv.config();
 const app = express();
-app.listen(PORT || 5000, () => { console.log(`app is running on port ${PORT}`) })
+app.listen(process.env.PORT || 5000, () => { console.log(`app is running on port ${PORT}`) })
 
 function connect() {
-  mongoose.connect(`mongodb+srv://${USER_NAME}:${PASSWORD}@cluster0.3lkqrdw.mongodb.net/?retryWrites=true&w=majority`)
+  mongoose.connect(`mongodb+srv://${process.env.SER_NAME}:${process.env.PASSWORD}@cluster0.3lkqrdw.mongodb.net/?retryWrites=true&w=majority`)
     .then(success => console.log("connected success"));
 }
 connect();
