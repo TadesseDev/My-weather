@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose';
 dotenv.config();
 const app = express();
-app.listen(process.env.PORT || 5000, () => { console.log(`app is running on port ${PORT}`) })
+app.listen(process.env.PORT || 5000, () => { console.log(`app is running on port ${process.env.PORT}`) })
 
 function connect() {
   mongoose.connect(`mongodb+srv://${process.env.SER_NAME}:${process.env.PASSWORD}@cluster0.3lkqrdw.mongodb.net/?retryWrites=true&w=majority`)
